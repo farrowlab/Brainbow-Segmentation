@@ -5,7 +5,7 @@ This Repo includes Scripts needed to segment individual neurons in a Brainbow st
 Some codes are modified to be in Python, with GPU acceleration.
 The rest are written in Matlab
 
-#Step by Step guide
+# Step by Step guide
 After combining the 3 channels of the image by creating a composite, save stacks as tiff file.
 1) Go into bmd3 folder, open the denoiseGPU.py script, change the file name of the image to be processed, as well as the denoise sigma level, default at 1000, and run the script to get a denoise tiff file in the same folder.
 
