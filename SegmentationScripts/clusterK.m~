@@ -14,5 +14,5 @@ else
     svMeansLUV(:,1:3) = rgb2luv(svMeans(:,1:3)')';
     svMeansLUV(:,4:end) = svMeans(:,4:end)*50;
 end
-clusterCount = 20;
+clusterCount = 5 0;
 index = colorKmeans(clusterCount,svMeansLUV,opts_fkmeans);

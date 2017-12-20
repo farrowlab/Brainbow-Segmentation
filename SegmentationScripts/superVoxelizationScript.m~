@@ -97,26 +97,20 @@ for kk = 1:cc
   superVoxelMeans(kk,:)    = mean(thisSVcolors, 1);
 end
 toc;
-
-disp('CLUSTERING');
-clusterK;
-
-%disp('SAVING SUPERVOXEL BOUNDARIES');
-%cd ~/Desktop/brainbowSegmentation/bb/data;
-%fileName = [superVoxelOpts.filePreamble '.mat'];
-%save(fileName, 'superVoxelOpts', 'superVoxelCells', 'superVoxelMeans', 'boundaryVoxels', 'boundaryVoxelsSub');
-%cd ~/Desktop/brainbowSegmentation/bb;
-%disp('CALCULATING SUPERVOXEL AFFINITIES IN SPACE');
-%tic; sAff = calculate_sAff(cc, boundaryVoxelsSub, %superVoxelOpts.spatialDistanceCalculationOpts); toc;
+disp('SAVING SUPERVOXEL BOUNDARIES');
+cd ~/Desktop/brainbowSegmentation/bb/data;
+fileName = [superVoxelOpts.filePreamble '.mat'];
+save(fileName, 'superVoxelOpts', 'superVoxelCells', 'superVoxelMeans', 'boundaryVoxels', 'boundaryVoxelsSub');
+cd ~/Desktop/brainbowSegmentation/bb;
+disp('CALCULATING SUPERVOXEL AFFINITIES IN SPACE');
+tic; sAff = calculate_sAff(cc, boundaryVoxelsSub, superVoxelOpts.spatialDistanceCalculationOpts); toc;
 % disp('CALCULATING SUPERVOXEL AFFINITIES IN COLOR');                                           % obsolete
 % tic; cAff = calculate_cAff(cc, superVoxelMeans, superVoxelOpts.colorDistanceUpperBound); toc; % obsolete
-%disp('SAVING');
-%cd ~/Desktop/brainbowSegmentation/bb/data;
-%fileName = [superVoxelOpts.filePreamble '_aff.mat'];
-%save(fileName, 'superVoxelOpts', 'superVoxelCells', 'superVoxelMeans', 'stackSize', 'sAff', 'boundaryVoxels', '-v7.3');
-%cd ~/Desktop/brainbowSegmentation/bb;
-
-
+disp('SAVING');
+cd ~/Desktop/brainbowSegmentation/bb/data;
+fileName = [superVoxelOpts.filePreamble '_aff.mat'];
+save(fileName, 'superVoxelOpts', 'superVoxelCells', 'superVoxelMeans', 'stackSize', 'sAff', 'boundaryVoxels', '-v7.3');
+cd ~/Desktop/brainbowSegmentation/bb;
 
 %disp('SPLITTING SUPERVOXELS AT BRANCH INTERSECTIONS')
 %tic; [svCells,svMeans,svMeansInt,boundaryVoxels,boundaryVoxelsSub,duplicateSVs] = ...
