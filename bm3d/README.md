@@ -1,6 +1,11 @@
 bm3d-gpu
 ========
 
+# SIMPLE USAGE:
+
+Go into denoiseGPU.py, and change file name as well as sigma level for denoising, and run the script to create a denoise image.
+
+
 CUDA-accelerated implementation of BM3D image denoising method
 
 Author    : David Honzátko <honzatko@ksi.mff.cuni.cz>
