@@ -1,9 +1,10 @@
 # Brainbow-Segmentation
 
 # Overview
-This Repo includes Scripts needed to segment individual neurons in a Brainbow stack
-Some codes are modified to be in Python, with GPU acceleration.
-The rest are written in Matlab
+- This Repo includes Scripts needed to segment individual neurons in a Brainbow stack
+- Some codes are modified to be in Python, with GPU acceleration.
+- The rest are written in Matlab.
+- Basically, the image is denoised, then segmented and clustered by colors, and finally users manipulate the clustering scheme to pick the cluster that contains cell of interest.
 
 # Step by Step guide
 After combining the 3 channels of the image by creating a composite, save stacks as tiff file.
