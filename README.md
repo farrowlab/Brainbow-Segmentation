@@ -6,6 +6,8 @@
 - The rest are written in Matlab.
 - Basically, the image is denoised, then segmented and clustered by colors, and finally users manipulate the clustering scheme to pick the cluster that contains cell of interest.
 
+bmd3 --> SegmentationScripts --> Visualization 
+
 # Step by Step guide
 After combining the 3 channels of the image by creating a composite, save stacks as tiff file.
 1) Go into bmd3 folder, open the denoiseGPU.py script, change the file name of the image to be processed, as well as the denoise sigma level, default at 1000, and run the script to get a denoise tiff file in the same folder.
