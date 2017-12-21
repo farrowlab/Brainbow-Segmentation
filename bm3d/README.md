@@ -5,6 +5,12 @@ bm3d-gpu
 
 Go into denoiseGPU.py, and change file name as well as sigma level for denoising, and run the script to create a denoise image.
 
+This script will read in a Brainbow Image stack, and then return a stack of denoised images also in tiff format.
+
+Look into denoiseGPU.py to see where the data might be saved, as well as what the output filename should be.
+
+
+# REFERENCE
 
 CUDA-accelerated implementation of BM3D image denoising method
 
