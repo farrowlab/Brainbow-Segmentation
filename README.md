@@ -9,13 +9,13 @@
 bmd3 --> SegmentationScripts --> Visualization 
 
 # Step by Step guide
-After combining the 3 channels of the image by creating a composite, save stacks as tiff file.
+After combining the 3 channels of the image by creating a composite using imageJ, save Brainbow stacks as tiff file.
+
 1) Go into bmd3 folder, open the denoiseGPU.py script, change the file name of the image to be processed, as well as the denoise sigma level, default at 1000, and run the script to get a denoise tiff file in the same folder.
 
 2) Go into the SegmentationScripts folder, open the superVoxelizationScript, and edit the file location of the newly created denoise tiff stack. It should be something like: info = iminfo('/home/user/brainBowSegmentation/bm3d-gpu/denoise_image.tif')
 
 3) Run this SegmentationScripts. It will take a while, depending on how big the file is. After this script has finished running, The user has to specified the number of cluster, default is 20, and they can do so in the clusterK.m script, by assigning the clusterCount variable to the appropriate number of cluster. This has to be done by trial and error, but the clusterK script is really fast, so once all the variable in the SegmentationScripts are calculated, user can rerun the clusterK script as many time as they want.
-
 
 4) Next step would be to visualize the result and manipulate the cluster number, to make sure the clustering result is correct, as in the colors separated contains separated neurons.
 
